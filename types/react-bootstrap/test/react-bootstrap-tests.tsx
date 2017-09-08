@@ -12,7 +12,8 @@ import {
     Label, Badge, Jumbotron, PageHeader,
     Glyphicon, Table, Form, FormGroup,
     ControlLabel, FormControl, HelpBlock,
-    Radio, Checkbox, Media, InputGroup
+    Radio, Checkbox, Media, InputGroup, ToggleButtonGroup,
+    ToggleButton
 } from 'react-bootstrap';
 
 export class ReactBootstrapTest extends Component {
@@ -21,8 +22,8 @@ export class ReactBootstrapTest extends Component {
     }
 
     render() {
-        let style: CSSProperties = { padding: '50px' };
-        let tooltip = (<Tooltip><strong>Holy guacamole!</strong> Check this info.</Tooltip>);
+        const style: CSSProperties = { padding: '50px' };
+        const tooltip = (<Tooltip><strong>Holy guacamole!</strong> Check this info.</Tooltip>);
 
         const innerGlyphicon = <Glyphicon glyph='music' />;
         const innerButton = <Button>Before</Button>;
@@ -109,7 +110,7 @@ export class ReactBootstrapTest extends Component {
                     </ButtonToolbar>
                 </div>
 
-                <div style={style as CSSProperties}>
+                <div style={style}>
                     <ButtonToolbar>
                         <ButtonGroup>
                             <Button>1</Button>
@@ -407,7 +408,7 @@ export class ReactBootstrapTest extends Component {
                 </div>
 
                 <div style={style}>
-                  <div style={{ height: 120, position: 'relative' } as CSSProperties}>
+                  <div style={{ height: 120, position: 'relative' }}>
                     <Popover placement='right' positionLeft={200} positionTop={50} title='Popover right'>
                       And here's some <strong>amazing</strong> content. It's very engaging. right?
                     </Popover>
@@ -685,7 +686,7 @@ export class ReactBootstrapTest extends Component {
 
                 <div style={style}>
                     <Pagination
-                      buttonComponentClass={( props: any ) =>
+                      buttonComponentClass={(props: any) =>
                           <SafeAnchor href="/test" disabled role="role"/>
                       }
                       maxButtons={10}/>
@@ -1269,6 +1270,26 @@ export class ReactBootstrapTest extends Component {
                     <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                   </Media.Body>
                 </Media>
+              </div>
+
+              <div>
+                <ButtonToolbar>
+                  <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]}>
+                    <ToggleButton value={1}>Checkbox 1 (pre-checked)</ToggleButton>
+                    <ToggleButton value={2}>Checkbox 2</ToggleButton>
+                    <ToggleButton value={3}>Checkbox 3 (pre-checked)</ToggleButton>
+                  </ToggleButtonGroup>
+                </ButtonToolbar>
+
+                <ButtonToolbar>
+                  <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+                    <ToggleButton value={1}>
+                      Radio 1 (pre-checked)
+                    </ToggleButton>
+                    <ToggleButton value={2}>Radio 2</ToggleButton>
+                    <ToggleButton value={3}>Radio 3</ToggleButton>
+                  </ToggleButtonGroup>
+                </ButtonToolbar>
               </div>
             </div>
         );
