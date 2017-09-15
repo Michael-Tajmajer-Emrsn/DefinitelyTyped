@@ -68,6 +68,10 @@ declare namespace AdazzleReactDataGrid {
          * Consider using "react-contextmenu", included in "react-data-grid/addons".
          */
         contextMenu?: React.ReactElement<any>
+	/**
+         * Context menu Id required if using more than one context menu on a page.
+         */
+        contextMenuId?: string
         /**
          * A react component to customize how rows are rendered.
          * If you want to define your own, consider extending ReactDataGrid.Row.
