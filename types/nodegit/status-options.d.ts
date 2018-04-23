@@ -4,5 +4,6 @@ export interface StatusOptions {
     version?: number;
     show?: number;
     flags?: number;
-    pathspec?: Strarray;
+    pathspec?: Strarray | string | string[];
+    [key: string]: any;
 }

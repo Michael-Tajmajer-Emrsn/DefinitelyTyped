@@ -2,12 +2,12 @@
 // Project: https://github.com/jaredhanson/passport-oauth2#readme
 // Definitions by: Pasi Eronen <https://github.com/pasieronen>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-// TypeScript Version: 2.2
+// TypeScript Version: 2.3
 
 import { Request } from 'express';
 import { Strategy } from 'passport';
 
-declare class OAuth2Strategy implements Strategy {
+declare class OAuth2Strategy extends Strategy {
     name: string;
 
     constructor(options: OAuth2Strategy.StrategyOptions, verify: OAuth2Strategy.VerifyFunction);

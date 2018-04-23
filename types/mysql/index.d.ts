@@ -2,9 +2,12 @@
 // Project: https://github.com/mysqljs/mysql
 // Definitions by:  William Johnston <https://github.com/wjohnsto>
 // 	                Kacper Polak <https://github.com/kacepe>
+// 	                Krittanan Pingclasai <https://github.com/kpping>
+// 	                James Munro <https://github.com/jdmunro>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-/// <reference types="node" />
 // TypeScript Version: 2.1
+
+/// <reference types="node" />
 
 import stream = require("stream");
 import tls = require("tls");
@@ -239,6 +242,11 @@ export interface QueryOptions {
     sql: string;
 
     /**
+     * Values for template query
+     */
+    values?: any;
+
+    /**
      * Every operation takes an optional inactivity timeout option. This allows you to specify appropriate timeouts for
      * operations. It is important to note that these timeouts are not part of the MySQL protocol, and rather timeout
      * operations through the client. This means that when a timeout is reached, the connection it occurred on will be
@@ -421,7 +429,7 @@ export interface ConnectionConfig extends ConnectionOptions {
     /**
      * object with ssl parameters or a string containing name of ssl profile
      */
-    ssl?: tls.SecureContextOptions & { rejectUnauthorized?: boolean };
+    ssl?: string | (tls.SecureContextOptions & { rejectUnauthorized?: boolean });
 }
 
 export interface PoolConfig extends ConnectionConfig {
@@ -519,6 +527,11 @@ export interface MysqlError extends Error {
      * SQL of failed query
      */
     sql?: string;
+
+    /**
+     * Error message from MySQL
+     */
+    sqlMessage?: string;
 }
 
 export const enum Types {

@@ -2,6 +2,7 @@
 // Project: https://github.com/suchipi/chai-jest-snapshot#readme
 // Definitions by: Matt Perry <https://github.com/mattvperry>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+// TypeScript Version: 2.1
 
 /// <reference types="chai" />
 /// <reference types="mocha" />
@@ -21,7 +22,7 @@ interface ChaiJestSnapshot {
     (chai: any, utils: any): void;
 
     /** Set snapshot file name */
-    setFileName(filename: string): void;
+    setFilename(filename: string): void;
 
     /**
      * Set snapshot test name
